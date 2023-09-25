@@ -10,7 +10,7 @@ const Search = (props: any) => {
                 <InputLeftElement>
                     <Icon as={FiSearch} />
                 </InputLeftElement>
-                <Input placeholder={props.placeholder ? props.placeholder : 'Search .. '} />
+                <Input placeholder={props.placeholder ? props.placeholder : 'Search .. '} bg={'white'}/>
             </InputGroup>
     )
 }

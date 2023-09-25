@@ -11,7 +11,7 @@ function Headers(props: any) {
     const [data, setData] = useState(null)
     // const [isLoading, setLoading] = useState(true)
     useEffect(() => {
-        fetch('/api/notification?numbers=22')
+        fetch('/api/notification')
             .then((res) => res.json())
             .then((data) => {
                 setData(data.data.data)
@@ -36,7 +36,7 @@ function Headers(props: any) {
                             <BsFillBellSlashFill id="icons" size={20} />
                         </div>
                 }
-                <Profile isActive={true}/>
+                <Profile isActive={false}/>
             </div>
         </div>
     )
