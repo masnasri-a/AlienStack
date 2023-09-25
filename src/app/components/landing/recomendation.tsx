@@ -29,37 +29,51 @@ const RecomendationStockLanding = () => {
   };
 
   return (
-    <div className="RecomendationLanding">
-      <SimpleGrid
-      width={'90%'}
-        spacing={5}
-        templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
-      >
-        {data ? (
-          data.slice(0, 10).map((detail, index) => {
-            return (
-              <Card key={index} width={300}>
-                <CardHeader>
-                  <Flex gap={4}>
-                  <Image src={(detail as any).icon_url} width={50} height={50} />
-                    <div className="">
-                    <Heading size="md">{(detail as any).code}</Heading>
-                    <Heading size="sm">{(detail as any).name}</Heading>
-                    </div>
-                  </Flex>
-                </CardHeader>
-                <CardBody>
-                  <Text fontWeight={600}> Price : Rp.{priceFormat((detail as any).price)}</Text>
-                  <Text color="telegram">Volume : {(detail as any).tradable_volume}</Text>
-                </CardBody>
-              </Card>
-            );
-          })
-        ) : (
-          <>Not Found</>
-        )}
-      </SimpleGrid>
-    </div>
+    <>
+      <Flex>
+        <Text id="recomendation" fontWeight={600} fontSize={24}>Recomendation</Text>
+      </Flex>
+      <div className="RecomendationLanding">
+        <SimpleGrid
+          width={"80%"}
+          spacing={5}
+          templateColumns="repeat(auto-fill, minmax(20%, 1fr))"
+        >
+          {data ? (
+            data.slice(0, 12).map((detail, index) => {
+              return (
+                <Card key={index} width={300}>
+                  <CardHeader>
+                    <Flex gap={4}>
+                      <Image
+                        src={(detail as any).icon_url}
+                        width={50}
+                        height={50}
+                      />
+                      <div className="">
+                        <Heading size="md">{(detail as any).code}</Heading>
+                        <Heading size="sm" color={"gray.500"}>{(detail as any).name}</Heading>
+                      </div>
+                    </Flex>
+                  </CardHeader>
+                  <CardBody>
+                    <Text fontWeight={600}>
+                      {" "}
+                      Price : Rp.{priceFormat((detail as any).price)}
+                    </Text>
+                    <Text color="telegram">
+                      Volume : {(detail as any).tradable_volume}
+                    </Text>
+                  </CardBody>
+                </Card>
+              );
+            })
+          ) : (
+            <>Not Found</>
+          )}
+        </SimpleGrid>
+      </div>
+    </>
   );
 };
 
