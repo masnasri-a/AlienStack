@@ -1,0 +1,169 @@
+$foreground-color: #F6F8FA;
+$primary-color: #2984FF;
+$gray: #8A9FB9;
+$dark-gray: #667485;
+
+.headers {
+  width: 100vw;
+  height: 120px;
+  background-color: white;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+}
+
+// For Desktop
+@media only screen and (min-width: 1200px) {
+  .container {
+    padding: 0px 120px;
+  }
+
+  body {
+    margin: 0px;
+    padding: 0px;
+    background-color: $foreground-color
+  }
+}
+
+
+#search {
+  height: 40px;
+  color: $dark-gray;
+  border-radius: 10px;
+  border: 0px solid;
+  background-color: $foreground-color;
+  padding-left: 35px;
+  padding-right: 30px;
+  outline-color: $primary-color;
+}
+
+#searchIcon {
+  color: $gray;
+  padding-left: 10px;
+  height: 40px;
+}
+
+.headers {
+  display: flex;
+  justify-content: space-between;
+
+  .leftSide {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+  }
+
+  .rightSide {
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .notifications {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    transition: 1s;
+
+    #icons {
+      color: $primary-color;
+
+    }
+
+  }
+
+  .notifications:hover {
+    background-color: $primary-color;
+    border-radius: 50%;
+
+    #icons {
+      color: white;
+
+    }
+  }
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 1s;
+
+  p {
+    margin: 10px;
+    font-weight: 600;
+  }
+
+  span {
+    margin: 10px;
+    font-weight: 400;
+    color: $dark-gray;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: red;
+  height: calc(100% - 120px);
+
+}
+
+.onlyScreen {
+  height: 100vh;
+}
+
+.cardSignIn {
+  border-radius: 20px;
+  padding: 20px;
+  background-color: white;
+  width: 50%;
+  // height: 800px;
+  row-gap: 20px;
+
+  .heads {
+    display: flex;
+    justify-content: flex-end;
+
+    .signUp {
+      display: flex;
+      gap: 10px;
+
+      span {
+        font-weight: 500;
+        color: $primary-color;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .headingTitle {
+    font-weight: 600;
+    font-size: larger;
+  }
+
+  .subHeadingTitle {
+    color:$dark-gray;
+  }
+
+  .or{
+    text-align: center;
+  }
+
+  .forget{
+    text-align: center;
+    span{
+      color: $primary-color;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}

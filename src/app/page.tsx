@@ -1,95 +1,53 @@
+"use client"
+
 import Image from 'next/image'
 import styles from './page.module.css'
+import Header from './components/landing/header'
+import { Button, Icon, Input, InputGroup, InputLeftElement, InputRightElement, Stack, VStack } from '@chakra-ui/react'
+import { FiSearch } from 'react-icons/fi'
+import TopPickSlider from './components/landing/top-pick'
+import ListNews from './components/landing/list-news'
+import RecomendationStockLanding from './components/landing/recomendation'
+
 
 export default function Home() {
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <div className='bodyLanding'>
+      <Header />
+      <p className="headingLanding">
+        Make Better Investment
+      </p>
+      <p className="headingLanding">
+        Decision With Alternative Data
+      </p>
+      <VStack spacing={3} align='center'>
+        <span>
+          Get the inside scoop on companies like never before.
+          <br />
+          Complete your due diligence with AlienStock
+        </span>
+        <InputGroup size='md' width={'40%'}>
+          <InputLeftElement >
+            <Icon as={FiSearch} />
+          </InputLeftElement>
+          <Input
+            pr='4.5rem'
+            placeholder='Search Stocks'
+          />
+          <InputRightElement width='4.5rem'>
+            <Button size='md' colorScheme='telegram' onClick={() => console.log('hehe')
+            }>
+              <span>Search</span>
+            </Button>
+          </InputRightElement>
+        </InputGroup>
+      </VStack>
+      <div className="topPick" id='#topPick'>
+      <TopPickSlider />
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <ListNews />
+      <RecomendationStockLanding />
+    </div>
   )
 }

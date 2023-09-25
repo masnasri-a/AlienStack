@@ -1,0 +1,100 @@
+$foreground-color: #f6f8fa;
+$primary-color: #2984ff;
+$gray: #8a9fb9;
+$dark-gray: #667485;
+
+.headerLanding {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: white;
+  .menus {
+    display: flex;
+    gap: 20px;
+    font-weight: 500;
+
+    Link {
+      cursor: pointer;
+    }
+  }
+}
+
+.bodyLanding {
+  background-color: $foreground-color;
+}
+
+.headingLanding {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.topPick {
+  display: flex;
+  justify-content: center;
+}
+.topPickSlider {
+  width: 90vw;
+
+  .cards {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 20px;
+    // margin-left: 50px;
+    // margin-right: 50px;
+    background-color: white;
+  }
+}
+
+.cardNewsLanding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $foreground-color;
+  CardHeader{
+    font-weight: 700;
+  }
+  .cardOnlineNews {
+    margin-bottom: 10px;
+    width: 50vw;
+    // padding: 20px;
+    :hover {
+      background-color: $foreground-color;
+    }
+    Card {
+      padding: 20px;
+    }
+
+    .detailCard {
+      padding: 20px;
+      display: flex;
+      // justify-content: space-between;
+      .images {
+        width: 180px;
+      }
+      .rightSide {
+        width: calc(100% - 200px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .headTitle {
+          display: flex;
+          justify-content: space-between;
+          .titleNews {
+            width: 70%;
+            font-weight: 600;
+          }
+          
+        }
+        .dates{
+          color: $dark-gray;
+        }
+      }
+    }
+  }
+}
+
+.RecomendationLanding{
+  display: flex;
+  justify-content: center;
+}
