@@ -1,15 +1,15 @@
 import Image from "next/image";
 import React from "react";
-import Logo from "@/../public/Logo.png";
+import Logo from "@/../public/Logo.svg";
 import Link from "next/link";
 import { Button, Stack } from "@chakra-ui/react";
 
 const Header = () => {
   return (
     <div className="headerLanding">
-      <Image src={Logo} alt={"logo"} width={120} />
+      <Image src={Logo} alt={"logo"} height={60} />
       <div className="menus">
-        <Link href={"#topPick"}>Top Pick</Link>
+        <Link href={"#topPick"}>E-IPO</Link>
         <Link href={"#news"}>News</Link>
         <Link href={"#recomendation"}>Recomendation</Link>
         <Link href={"#contact"}>Contact</Link>

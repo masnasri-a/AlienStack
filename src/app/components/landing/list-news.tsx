@@ -1,12 +1,16 @@
 "use client";
 import {
+  AbsoluteCenter,
   Badge,
+  Box,
   Card,
   CardBody,
   CardHeader,
+  Divider,
   Flex,
   Image,
   Link,
+  Text,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { format } from "date-fns";
@@ -26,8 +30,13 @@ const ListNews = () => {
   };
   return (
     <Card className="cardNewsLanding">
-      <CardHeader title="Popular News">
-        <p>Popular News</p>
+      <CardHeader title="Popular News" >
+        <Box position="relative" padding="10">
+          <Divider />
+            <Text fontWeight={600} fontSize={24} color={"gray.600"}>
+              Popular News
+            </Text>
+        </Box>
       </CardHeader>
       <CardBody>
         {data ? (
@@ -39,6 +48,7 @@ const ListNews = () => {
                     <Flex>
                       <div className="images">
                         <Image
+                        alt="Test"
                           src={detail.img_url}
                           width={150}
                           height={100}
@@ -50,7 +60,11 @@ const ListNews = () => {
                         <div className="headTitle">
                           <p className="titleNews">{detail.title}</p>
                           {/* <div className="category"></div> */}
-                          <Badge variant="subtle" height={"min-content"} colorScheme="green">
+                          <Badge
+                            variant="subtle"
+                            height={"min-content"}
+                            colorScheme="green"
+                          >
                             {detail.type}
                           </Badge>
                         </div>

@@ -8,6 +8,8 @@ import { FiSearch } from 'react-icons/fi'
 import TopPickSlider from './components/landing/top-pick'
 import ListNews from './components/landing/list-news'
 import RecomendationStockLanding from './components/landing/recomendation'
+import Contact from './components/landing/contact'
+import Footer from './components/landing/footer'
 
 
 export default function Home() {
@@ -16,9 +18,8 @@ export default function Home() {
     <div className='bodyLanding'>
       <Header />
       <p className="headingLanding">
-        Make Better Investment
-      </p>
-      <p className="headingLanding">
+        Make Better Investment 
+        <br />
         Decision With Alternative Data
       </p>
       <VStack spacing={3} align='center'>
@@ -27,8 +28,8 @@ export default function Home() {
           <br />
           Complete your due diligence with AlienStock
         </span>
-        <InputGroup size='md' width={'40%'}>
-          <InputLeftElement >
+        <InputGroup marginTop={20} bg={'white'} marginBottom={20} size='md' width={'40%'}>
+          <InputLeftElement  height={'40px'}>
             <Icon as={FiSearch} />
           </InputLeftElement>
           <Input
@@ -43,11 +44,13 @@ export default function Home() {
           </InputRightElement>
         </InputGroup>
       </VStack>
-      <div className="topPick" id='#topPick'>
+      <div className="topPick" id='topPick'>
       <TopPickSlider />
       </div>
       <ListNews />
       <RecomendationStockLanding />
+      <Contact/>
+      <Footer/>
     </div>
   )
 }

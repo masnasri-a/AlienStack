@@ -31,7 +31,9 @@ const RecomendationStockLanding = () => {
   return (
     <>
       <Flex>
-        <Text id="recomendation" fontWeight={600} fontSize={24}>Recomendation</Text>
+        <Text id="recomendation" fontWeight={600} fontSize={24}>
+          Recomendation
+        </Text>
       </Flex>
       <div className="RecomendationLanding">
         <SimpleGrid
@@ -46,13 +48,16 @@ const RecomendationStockLanding = () => {
                   <CardHeader>
                     <Flex gap={4}>
                       <Image
+                        alt="test"
                         src={(detail as any).icon_url}
                         width={50}
                         height={50}
                       />
                       <div className="">
                         <Heading size="md">{(detail as any).code}</Heading>
-                        <Heading size="sm" color={"gray.500"}>{(detail as any).name}</Heading>
+                        <Heading size="sm" color={"gray.500"}>
+                          {(detail as any).name}
+                        </Heading>
                       </div>
                     </Flex>
                   </CardHeader>

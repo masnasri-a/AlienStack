@@ -4,9 +4,11 @@ $gray: #8a9fb9;
 $dark-gray: #667485;
 
 .headerLanding {
+  position: sticky;
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  align-items: center;
   background-color: white;
   .menus {
     display: flex;
@@ -24,6 +26,8 @@ $dark-gray: #667485;
 }
 
 .headingLanding {
+  margin-top: 50px;
+  margin-bottom: 20px;
   text-align: center;
   font-size: 50px;
   font-weight: 600;
@@ -51,7 +55,7 @@ $dark-gray: #667485;
   justify-content: center;
   align-items: center;
   background-color: $foreground-color;
-  CardHeader{
+  CardHeader {
     font-weight: 700;
   }
   .cardOnlineNews {
@@ -84,9 +88,8 @@ $dark-gray: #667485;
             width: 70%;
             font-weight: 600;
           }
-          
         }
-        .dates{
+        .dates {
           color: $dark-gray;
         }
       }
@@ -94,7 +97,7 @@ $dark-gray: #667485;
   }
 }
 
-.RecomendationLanding{
+.RecomendationLanding {
   // width: 100%;
   // background-color: red;
   // margin: auto;
@@ -103,10 +106,42 @@ $dark-gray: #667485;
   align-items: center;
 }
 
-#recomendation{
+#recomendation {
   text-align: center;
   // background-color: red;
   width: 100%;
   margin-top: 30px;
   margin-bottom: 10px;
+}
+
+.contact {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+
+  width: 100vw;
+  .leftSide {
+    border-radius: 20px 0px;
+
+    width: 40%;
+    background-color: white;
+    padding: 5rem;
+    .name {
+      display: flex;
+      gap: 20px;
+    }
+    // background-color: red;
+  }
+  .rightSide {
+    width: 30%;
+    background-color: blue;
+  }
+}
+
+
+.footerCard{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

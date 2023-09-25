@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import Logo from '@/../public/Logo.png'
+import Logo from '@/../public/Logo.svg'
 import Search from '../modular/search'
 import { BsFillBellFill, BsFillBellSlashFill } from 'react-icons/bs'
 import Profile from '../modular/profile'
@@ -22,7 +22,7 @@ function Headers(props: any) {
     return (
         <div className='headers'>
             <div className="leftSide">
-                <Image src={Logo} width={150} alt='Logo' />
+                <Image src={Logo} height={60} alt='Logo' />
                 <Search placeholder='Search Stock' />
             </div>
             <div className="rightSide">

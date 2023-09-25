@@ -1,20 +1,37 @@
+"use client";
 import {
+  Badge,
+  Box,
   Button,
   Card,
   CardBody,
   CardFooter,
   CardHeader,
+  Flex,
   Heading,
+  Image,
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
 import Slider from "react-slick";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { format } from "date-fns";
 
 const TopPickSlider = () => {
-  const result = [1, 2, 3, 4, 5, 6, 7, 4, 5, 6, 7];
+  const [result, setResult] = useState([]);
+  useEffect(() => {
+    fetch("/api/ipo")
+      .then((res) => res.json())
+      .then((data) => {
+        setResult(data.data.results);
+      });
+  }, []);
+
+  const formattedDate = (originalDate: string) => {
+    return format(new Date(originalDate), "dd MMMM yyyy");
+  };
 
   const settings = {
     dots: true,
@@ -31,21 +48,47 @@ const TopPickSlider = () => {
   return (
     <div className="topPickSlider">
       <Slider {...settings}>
-        {result.map((index, detail) => {
+        {result.map((detail, index) => {
           return (
-            <div className="gaps"  key={index}>
+            <div className="gaps" key={index}>
               <Card className="cards">
                 <CardHeader>
-                  <Heading size="md"> Customer dashboard</Heading>
+                  <Flex justifyContent={"space-between"}>
+                    <Flex gap={5}>
+                      <Image
+                        src={(detail as any).icon_url}
+                        alt="logo"
+                        width={"50px"}
+                        height={"50px"}
+                        objectFit={"cover"}
+                      ></Image>
+                      <Box>
+                        <Heading size="md">{(detail as any).code}</Heading>
+                        <Text>{(detail as any).company}</Text>
+                      </Box>
+                    </Flex>
+                    <Box>
+                      <Badge
+                        variant="subtle"
+                        borderRadius={"10px"}
+                        width={"50px"}
+                        margin={"auto"}
+                        height={"20px"}
+                        textAlign={"center"}
+                        colorScheme="linkedin"
+                      >
+                        <Text>{(detail as any).type}</Text>
+                      </Badge>
+                    </Box>
+                  </Flex>
                 </CardHeader>
                 <CardBody>
-                  <Text>
-                    View a summary of all your customers over the last month.
+                  <Text>{(detail as any).business}</Text>
+                  <Text fontWeight={600}>
+                    {" "}
+                    {formattedDate((detail as any).eipo_start_at)}
                   </Text>
                 </CardBody>
-                <CardFooter>
-                  <Button>View here</Button>
-                </CardFooter>
               </Card>
             </div>
           );
