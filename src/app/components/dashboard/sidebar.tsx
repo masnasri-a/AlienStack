@@ -23,9 +23,11 @@ import {
   FiTrendingUp,
 } from "react-icons/fi";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Sidebar = (props: any) => {
-  const [active, setActive] = useState(0);
+  const router = useRouter()
+  const [active, setActive] = useState(props.selected?props.selected:0);
   const [minimize, setMinimize] = useState(false);
   const menu = [
     {
@@ -77,6 +79,7 @@ const Sidebar = (props: any) => {
         </Link>
         <Button
           onClick={() => {
+            
             props.minimized(!minimize);
             setMinimize(!minimize);
           }}
@@ -106,7 +109,9 @@ const Sidebar = (props: any) => {
                 className={`menuSelected ${
                   active == index ? "menuActive" : ""
                 }`}
-                onClick={() => setActive(index)}
+                onClick={() => {setActive(index)
+                router.push(`/${(detail as any).slug}`)
+                }}
               >
                 <Flex gap={2} alignItems={"center"} paddingLeft={4}>
                   <Icon as={(detail as any).icon} />

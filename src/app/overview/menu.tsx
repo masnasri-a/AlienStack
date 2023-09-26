@@ -1,19 +1,25 @@
-import { Spacer, Text } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Flex, Spacer, Text } from "@chakra-ui/react";
+import React from "react";
+import IndexStock from "../components/dashboard/overview/index-stock";
 
 const Menu = () => {
   return (
-    <div className='basic'>
-        <Spacer scale={4}>
+    <div className="basic">
+      <Spacer scale={4}>
         <Text fontWeight={600} fontSize={24}>
-            Overview
+          Overview
         </Text>
         <Text fontWeight={400} fontSize={14} color={"gray.500"}>
-            Description
+          Description
         </Text>
-        </Spacer>
+        <Flex>
+        <Box width={"60%"}>
+          <IndexStock />
+        </Box>
+        </Flex>
+      </Spacer>
     </div>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;

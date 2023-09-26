@@ -1,0 +1,52 @@
+$foreground-color: #f6f8fa;
+$primary-color: #2984ff;
+$gray: #8a9fb9;
+$dark-gray: #667485;
+
+.sidebar{
+    height: 100vh;
+    background-color: white;
+    transition: 1s;
+}
+.minimized{
+    width: 150px;
+}
+.maximized{
+    width: 300px;
+}
+
+.menuSelected{
+    cursor: pointer;
+    padding: 15px;
+    margin-bottom:5px;
+    border-right: 2px soild $dark-gray;
+}
+
+.menuActive{
+    // background-color: red;
+    border-left: 5px solid $primary-color;
+}
+
+
+.dashboard{
+    width: 100vw;
+    height: 100vh;
+    background-color: $foreground-color;
+}
+
+.headerDashboard{
+    height: 100px;
+    width: 100%;
+    background-color:white;
+    padding-right: 20px;
+}
+
+.headMinimized{
+    // width: calc(100vw - 150px);
+}
+
+.test{
+    background-color: red;
+    width: 100%;
+    height: 100px;
+}

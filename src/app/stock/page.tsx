@@ -11,7 +11,7 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <Flex>
-        <Sidebar selected={0} minimized={(e: any) => setMinimized} />
+        <Sidebar selected={1} minimized={(e: any) => setMinimized} />
         <div className="test">
           <Header minimized={minimized} />
           <Menu/>
