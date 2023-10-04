@@ -1,6 +1,8 @@
 import { Box, Flex, Spacer, Text } from "@chakra-ui/react";
 import React from "react";
 import IndexStock from "../components/dashboard/overview/index-stock";
+import Globalndex from "../components/dashboard/overview/global-index";
+import MoneyCurs from "../components/dashboard/overview/money-curs";
 
 const Menu = () => {
   return (
@@ -12,11 +14,16 @@ const Menu = () => {
         <Text fontWeight={400} fontSize={14} color={"gray.500"}>
           Description
         </Text>
-        <Flex>
-        <Box width={"60%"}>
-          <IndexStock />
-        </Box>
+        <Flex marginTop={'20px'} gap={'3%'} marginBottom={'20px'}>
+          <Box width={"60%"}>
+            <IndexStock />
+          </Box>
+          <Box width={'35%'}>
+            <Globalndex/>
+          </Box>
         </Flex>
+        
+        <MoneyCurs/>
       </Spacer>
     </div>
   );

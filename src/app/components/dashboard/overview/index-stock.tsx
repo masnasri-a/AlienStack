@@ -80,7 +80,6 @@ const IndexStock = () => {
         label: "Price",
         data: prices,
         borderColor: "rgb(48, 132, 255)",
-        // backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
     ],
   };
@@ -96,11 +95,10 @@ const IndexStock = () => {
             </Text>
           </Spacer>
           <Spacer scale={4}>
-            <Flex justifyContent={"flex-end"} gap={2}>
-              <Badge> 2.25</Badge>
-              <Text>3 Month</Text>
+            <Flex justifyContent={"flex-end"} gap={2} alignItems={'center'}>
+              <Badge variant={'solid'} colorScheme={'green'} borderRadius={'10'} height={'20px'} width={'45px'}> 2.25% </Badge>
+              <Text fontWeight={600}>3 Month</Text>
             </Flex>
-            <Text>Price</Text>
           </Spacer>
         </Flex>
       </CardHeader>
