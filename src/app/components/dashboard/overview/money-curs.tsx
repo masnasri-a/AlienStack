@@ -260,7 +260,7 @@ const MoneyCurs = () => {
                   borderRadius={"10px"}
                 >
                   <Flex justifyContent={'space-between'}>
-                    <div>
+                    <div className="tests">
                       <Flex alignItems={"center"} gap={2}>
                         <Image
                           src={detail.icon_url}
@@ -272,7 +272,7 @@ const MoneyCurs = () => {
                       </Flex>
                       <Text marginTop={'10px'}>{formatCurrencyIDR(detail.price)}</Text>
                     </div>
-                    <Text>{ColorFormat(detail.change)}</Text>
+                    {ColorFormat(detail.change)}
                   </Flex>
                 </Box>
               );

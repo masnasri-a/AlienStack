@@ -33,12 +33,6 @@ $dark-gray: #667485;
     height: 100vh;
     background-color: $foreground-color;
 }
-.hoverCard:hover{
-    border: 2px solid $primary-color;
-    transition: 0.3s;
-    // outline-color: $primary-color;
-    cursor: pointer;
-}
 
 .headerDashboard{
     height: 100px;

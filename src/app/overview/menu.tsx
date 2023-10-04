@@ -22,7 +22,6 @@ const Menu = () => {
             <Globalndex/>
           </Box>
         </Flex>
-        
         <MoneyCurs/>
       </Spacer>
     </div>
