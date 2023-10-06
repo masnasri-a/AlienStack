@@ -10,7 +10,7 @@ const Profile = (props: any) => {
       .then((data) => {
         setData(data.data.data);
       });
-  });
+  },[]);
   return (
     <div>
       {props.isActive ? (

@@ -23,6 +23,7 @@ $dark-gray: #667485;
 
 .bodyLanding {
   background-color: $foreground-color;
+  margin: 0px auto;
 }
 
 .headingLanding {
@@ -120,7 +121,7 @@ $dark-gray: #667485;
   justify-content: center;
   border-radius: 20px;
 
-  width: 100vw;
+  width: 100%;
   .leftSide {
     border-radius: 20px 0px;
 
@@ -135,7 +136,6 @@ $dark-gray: #667485;
   }
   .rightSide {
     width: 30%;
-    background-color: blue;
   }
 }
 
